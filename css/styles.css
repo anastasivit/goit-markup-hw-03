@@ -37,6 +37,11 @@ body {
   font-size: 16px;
 }
 
+section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
 :root {
   --accent-color: #e7e9fc;
   --dark-color: #2e2f42;
@@ -55,12 +60,26 @@ body {
   padding-right: 15px;
 }
 
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
 /* STUDIO STYLES */
 
 /* Header */
 .header {
   padding-top: 24px;
   padding-bottom: 24px;
+  border: 1px solid var(--accent-color);
 }
 
 .header-container {
@@ -163,12 +182,15 @@ body {
 }
 
 .hero-title {
+  width: 499px;
   font-size: 56px;
   line-height: 1.1;
-  text-align: center;
   letter-spacing: 0.02em;
   color: var(--white-color);
   margin-bottom: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .hero-button {
@@ -189,6 +211,7 @@ body {
   border-radius: 4px;
   color: var(--white-color);
   border: var(--pressed-color);
+  text-align: center;
 }
 
 .hero-button:hover,
@@ -212,14 +235,16 @@ body {
 /* Feauture */
 
 .feauture {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-bottom: 0;
 }
 
 .feauture-list {
-  margin-bottom: 120px;
   display: flex;
   gap: 24px;
+}
+
+.feauture-item {
+  width: 264px;
 }
 
 .feauture-title {
@@ -267,8 +292,6 @@ body {
 /* Team */
 .team {
   background-color: var(--light-color);
-  padding-top: 120px;
-  padding-bottom: 120px;
 }
 
 .team-list {
@@ -283,6 +306,9 @@ body {
 .team-card {
   padding: 32px 16px;
   background-color: var(--white-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
 }
 .team-subject,
 .project-subject {
@@ -317,30 +343,21 @@ body {
   font-weight: 800;
   font-size: 18px;
   line-height: 1.3;
-  display: flex;
-  align-items: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--light-color);
 }
 
 .footer-logo {
-  font-family: "Raleway", sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 1.3;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
   color: var(--primary-color);
-  background-color: var(--dark-color);
 }
 
 .slogan {
+  width: 264px;
   line-height: 24px;
   letter-spacing: 0.02em;
   color: var(--acent-color);
+  margin-top: 16px;
 }
 
 /* PORTFOLIO STYLES */
@@ -348,8 +365,6 @@ body {
 /* Filters */
 
 .filters {
-  padding-top: 96px;
-  padding-bottom: 72px;
 }
 
 .filters-list {
@@ -357,74 +372,67 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 24px;
-}
-
-.filters-title {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  padding-bottom: 72px;
 }
 
 .filters-button {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  min-width: 116px;
+  height: 48px;
+  background: var(--light-color);
+  color: var(--primary-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.filters-button:hover,
+.filters-button:focus {
+  background: var(--pressed-color);
+  color: #ffffff;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+
+.fiters-item {
+  width: 116px;
+  height: 48px;
+  background: var(--light-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
   display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: 0.04em;
   color: var(--primary-color);
-}
-
-.filters-button:hover,
-.filters-button:focus {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: var(--white-color);
-}
-
-/* .fiters-item {
-  width: 116px;
-  height: 48px;
-  background: #f4f4fd;
-  border: 1px solid #e7e9fc;
-  border-radius: 4px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
 .filters-item:hover,
 .folters-item:focus {
-  width: 69px;
-  height: 48px;
-  background: #404bbf;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-} */
+  background: var(--pressed-color);
+  color: var(--white-color);
+}
 
 /* <!-- Project --> */
-
-.project {
-  padding-top: 72;
-  padding-bottom: 120px;
-}
 
 .project-list {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
   row-gap: 48px;
+  padding-top: 72;
+  padding-bottom: 120px;
 }
 
 .project-item {
